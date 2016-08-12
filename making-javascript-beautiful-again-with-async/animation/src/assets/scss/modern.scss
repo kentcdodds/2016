@@ -1,0 +1,22 @@
+/* ---------------------------------------------------------------------
+ Modern Styles
+------------------------------------------------------------------------ */
+@import "base/_reset";
+@import "base/_elements";
+
+#wrapper {
+    margin: 20px;
+    position: relative;
+}
+
+body, button {
+   font-size: 20px; 
+}
+
+#mario {
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    left: 0px;
+    top: 0px;
+}
