@@ -14,7 +14,7 @@ But, I normally need a lot more in my applications: Ajax, Redux, Redux Devtools,
 
 It can be painful to set up all the pieces. There are over [18,000 react packages](https://www.npmjs.com/search?q=react) on npm.
 
-It can be a hassle and a roadblock figuring out what applications. So I prefer starting with a boiler plate project. I recommend using one of the following:
+I prefer starting with a boiler plate project. I recommend using one of the following:
 
 * [coryhouse/react-slingshot: React + Redux starter kit with Babel, hot reloading, testing, linting and a working example app, all built in](https://github.com/coryhouse/react-slingshot)
 * [kriasoft/react-starter-kit: React Starter Kit — isomorphic web app boilerplate (Node.js, Express, GraphQL, React.js, Babel 6, PostCSS, Webpack, Browsersync)](https://github.com/kriasoft/react-starter-kit)
