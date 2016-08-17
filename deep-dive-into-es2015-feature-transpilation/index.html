@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="prism.css" />
+  <link rel="stylesheet" href="index.css" />
+  
+</head>
+<body>
+  <div id="container">
+  </div>
+
+  <script type="x-handlebars-template" id="slide-template">
+    
+    {{#if feature}}
+    <div class="slide feature {{slideClass}}">
+      {{#if content}}
+      <div class="text">{{{ content }}}</div>
+      {{/if}}
+
+        
+      <div class="feature-content">
+        {{#if image}}
+        <img src="{{image}}" class="feature-image" />
+        {{/if}}
+      </div>
+    </div>
+
+    {{else}}
+    <div class="slide {{slideClass}}">
+      {{#if title}}
+      <div class="title">{{{ title }}}{{#if score}}<div class="score">{{score}}</div>{{/if}}</div>
+      {{/if}}
+
+      <div class="content">
+        <div class="text">{{{ content }}}</div>
+
+        {{#if p}}
+        <div class="text">
+          {{#each p}}
+          <p>{{{ this }}}</p>
+          {{/each}}
+        </div>
+        {{/if}}
+        
+        {{#if ul}}
+        <ul class="list">
+          {{#each ul}}
+          <li class="point">{{{this}}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+
+        {{#if hasCode}}
+        <div class="code">
+        <pre><code class="language-{{#if language}}{{language}}{{else}}javascript{{/if}}">{{codeHelper code}}</code></pre>
+        </div>
+        {{/if}}
+
+        {{#if table}}
+        <div class="table">
+          <table class="{{table.class}}">
+            {{#if table.header}}
+            <thead>
+              <tr>
+                {{#each table.header}}
+                <th>{{{ this }}}</th>
+                {{/each}}
+              </tr>
+            </thead>
+            {{/if}}
+            <tbody>
+              {{#each table.rows}}
+              <tr>
+                {{#each this}}
+                <td class="{{cellClass this}}">{{{ this }}}</td>
+                {{/each}}
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        {{/if}}
+
+      </div>
+    </div>
+    {{/if}}
+
+  </script>
+
+  <script src="libs/jquery.js"></script>
+  <script src="libs/handlebars.js"></script>
+  <script src="libs/underscore.js"></script>
+
+  <script>
+  Handlebars.registerHelper("cellClass", function(value){
+    if (typeof value === "number") {
+      return "right"
+    }
+
+    return ""
+  })
+
+  Handlebars.registerHelper("codeHelper", function(value){
+    return value.toString()
+  })
+  </script>
+
+  <script src="slides.js"></script>
+  <script src="index.js"></script>
+
+  <script src="prism.js"></script>
+  
+</body>
+</html>
